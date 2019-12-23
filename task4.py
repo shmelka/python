@@ -21,9 +21,7 @@ class Car:
 class TownCar(Car):
 
     def __init__(self, color, name):
-        self.color = color
-        self.name = name
-        self.is_police = False
+        super().__init__(0, color, name, False)
 
     def show_speed(self):
         if self.speed > 60:
@@ -34,16 +32,12 @@ class TownCar(Car):
 class SportCar(Car):
 
     def __init__(self, color, name):
-        self.color = color
-        self.name = name
-        self.is_police = False
+        super().__init__(0, color, name, False)
 
 class WorkCar(Car):
 
     def __init__(self, color, name):
-        self.color = color
-        self.name = name
-        self.is_police = False
+        super().__init__(0, color, name, False)
 
     def show_speed(self):
         if self.speed > 40:
@@ -54,9 +48,7 @@ class WorkCar(Car):
 class PoliceCar(Car):
 
     def __init__(self, color, name):
-        self.color = color
-        self.name = name
-        self.is_police = True
+        super().__init__(0, color, name, True)
 
 town = TownCar('Green', 'TownCar name')
 town.go()
@@ -66,6 +58,7 @@ town.turn('right')
 town.speed = 70
 town.show_speed()
 print(f'Attributes: name - {town.name}, color - {town.color}, speed - {town.speed}, is_police - {town.is_police}')
+town.stop()
 
 print('**********************************')
 
@@ -77,6 +70,7 @@ sport.turn('left')
 sport.speed = 150
 sport.show_speed()
 print(f'Attributes: name - {sport.name}, color - {sport.color}, speed - {sport.speed}, is_police - {sport.is_police}')
+sport.stop()
 
 print('**********************************')
 
@@ -88,6 +82,7 @@ work.turn('left')
 work.speed = 50
 work.show_speed()
 print(f'Attributes: name - {work.name}, color - {work.color}, speed - {work.speed}, is_police - {work.is_police}')
+work.stop()
 
 print('**********************************')
 
@@ -99,3 +94,4 @@ police.turn('right')
 police.speed = 80
 police.show_speed()
 print(f'Attributes: name - {police.name}, color - {police.color}, speed - {police.speed}, is_police - {police.is_police}')
+police.stop()
