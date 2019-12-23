@@ -29,7 +29,7 @@ class TownCar(Car):
         if self.speed > 60:
             print(f'Current speed of the car: {self.speed}. Attention!!! High speed')
         else:
-            Car.show_speed(self)
+            super().show_speed()
 
 class SportCar(Car):
 
@@ -49,7 +49,7 @@ class WorkCar(Car):
         if self.speed > 40:
             print(f'Current speed of the car: {self.speed}. Attention!!! High speed')
         else:
-            Car.show_speed(self)
+            super().show_speed()
 
 class PoliceCar(Car):
 
